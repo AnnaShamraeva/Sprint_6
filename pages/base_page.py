@@ -1,7 +1,7 @@
 import allure
 from curl import Url
 from conftest import driver
-#from locators import Locators
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -29,7 +29,7 @@ class BasePage:
 
     # Подождать элемент
     def wait_element(self, locator):
-       WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(locator))
+       WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located(locator))
 
     # Нажать на элемент
     def click_on_element(self, locator):
@@ -43,11 +43,9 @@ class BasePage:
     def send_keys(self, locator, value):
         self.driver.find_element(*locator).send_keys(value)
 
-    # Переключить активное окно
+    # Переключить окно
     def tab_switch(self, driver):
         self.driver.switch_to.window(driver.window_handles[1])
-
-        
 
 
 

@@ -3,9 +3,7 @@ from pages.base_page import BasePage
 from locators.main_page_locators import MainPageLocators
 from curl import Url
 from selenium.webdriver.support.ui import WebDriverWait
-from conftest import driver
-
-# Страница https://qa-scooter.praktikum-services.ru/
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class MainPage(BasePage):
@@ -36,10 +34,8 @@ class MainPage(BasePage):
     
     @allure.step("Появление ответа на вопрос в Вопросах о важном")
     def get_answer(self, number):
-        #WebDriverWait(self.driver, 10)
         method, locator = MainPageLocators.ANSWER
         locator = locator.format(number) 
-        #WebDriverWait(self.driver, 10)
         return self.get_text((method, locator))
 
     @allure.step("Найти последний вопрос в Вопросах о важном")
@@ -61,7 +57,9 @@ class MainPage(BasePage):
     @allure.step("Проверить, что при нажатии на логотип Самокат был совершен переход на главную страницу")
     def check_redirection_on_main_page(self):
         self.cross_url(Url.main_page)
-
-
-
+    
+ 
+    @allure.step('Проверить появление страницы "Дзен"')
+    def check_all_about_dzen(self): 
+        self.get_text(MainPageLocators.DZEN)
     

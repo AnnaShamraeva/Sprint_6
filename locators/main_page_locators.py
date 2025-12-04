@@ -11,13 +11,5 @@ class MainPageLocators:
     COOKIE = (By.ID, "rcc-confirm-button") # Всплывающее сообщение "Куки": да все привыкли
    
     LOGO_SCOOTER = (By.XPATH, '//a[@href="/"]') # "Самокат" логотип    
-    LOGO_YANDEX = (By.XPATH, '//a[@href="//yandex.ru"]') # "Яндекс" логотип 
-     
-    # AVATAR_INPUT = (By.ID, "owner-avatar")
-    # UPDATE_AVATAR_BUTTON = (By.XPATH, "//form[@name='edit-avatar']/button[@class='button popup__button']")
-    # CARDS = (By.CLASS_NAME, "card__image")
-    # CARD_NAME_IN_POPUP = (By.CLASS_NAME, "popup__caption")
-
-    #@staticmethod
-    #def card_number(card):
-        #return By.XPATH, f'//*[@id="root"]/div/main/section[2]/ul/li[{card}]'
+    LOGO_YANDEX = (By.XPATH, '//a[@href="//yandex.ru"]') # "Яндекс" логотип
+    

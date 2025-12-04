@@ -2,7 +2,6 @@ import allure
 import pytest
 from data import MainPageAnswersForQuestions
 from conftest import driver
-#from locators import Locators
 from pages.main_page import MainPage
 from curl import Url
 

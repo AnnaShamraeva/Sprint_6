@@ -1,11 +1,7 @@
 import allure
 from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators
-from conftest import driver
-from curl import Url
-from conftest import driver
  
-# страница заказа https://qa-scooter.praktikum-services.ru/order   
 
 class OrderPage(BasePage):
     @allure.step('Заполнить поле "Имя"')
@@ -68,12 +64,13 @@ class OrderPage(BasePage):
         self.set_phone(user['phone'])
         self.click_further_button()
         self.set_data(OrderPageLocators.DATA)
-        self.set_phone(OrderPageLocators.PERIOD)
+        self.set_period(OrderPageLocators.PERIOD)
         self.set_color(OrderPageLocators.COLOR)
         self.set_comment(user['comment'])
         self.click_order_button()
         self.click_yes_button()
            
-    @allure.step('Проверить появление окна "Заказ оформлен"')
+    @allure.step('Проверить появление окна с текстом "Заказ оформлен"')
     def check_order_was_do_screen(self): 
+        self.wait_element(OrderPageLocators.MODAL_SCREEN_SUCCESS)
         self.get_text(OrderPageLocators.MODAL_SCREEN_SUCCESS)
