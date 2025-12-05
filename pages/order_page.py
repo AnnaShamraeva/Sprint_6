@@ -72,5 +72,5 @@ class OrderPage(BasePage):
            
     @allure.step('Проверить появление окна с текстом "Заказ оформлен"')
     def check_order_was_do_screen(self): 
-        self.wait_element(OrderPageLocators.MODAL_SCREEN_SUCCESS)
-        self.get_text(OrderPageLocators.MODAL_SCREEN_SUCCESS)
+        self.wait_element(OrderPageLocators.BUTTON_MODAL_SCREEN_SUCCESS)
+        return self.get_text(OrderPageLocators.BUTTON_MODAL_SCREEN_SUCCESS)

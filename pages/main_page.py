@@ -46,10 +46,6 @@ class MainPage(BasePage):
     def click_on_yandex_logo(self):
         self.click_on_element(MainPageLocators.LOGO_YANDEX)
 
-    @allure.step("Проверить, что при нажатии на логотип Яндекс был совершен переход на Дзен страницу")
-    def check_redirection_on_dzen_main_page(self):
-        self.cross_url(Url.dzen_main_page)
-
     @allure.step("Нажать на логотип Самокат")
     def click_on_scooter_logo(self):
         self.click_on_element(MainPageLocators.LOGO_SCOOTER)
@@ -59,7 +55,4 @@ class MainPage(BasePage):
         self.cross_url(Url.main_page)
     
  
-    @allure.step('Проверить появление страницы "Дзен"')
-    def check_all_about_dzen(self): 
-        self.get_text(MainPageLocators.DZEN)
-    
+

@@ -15,7 +15,7 @@ class OrderPageLocators:
     DATA_FIELD = (By.XPATH, '//input[@placeholder="* Когда привезти самокат"]') # Поле для ввода даты содержит в себе выпадающий список "Dropdown-placeholder"
     DATA = (By.XPATH, '//div[@class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--weekend"]') # ВЫбираем суббота, 27-е декабря 2025 г.
     PERIOD_FIELD = (By.XPATH, '//div[text()="* Срок аренды"]') # Поле для ввода срока аренды
-  #<div class="Dropdown-placeholder is-selected">сутки</div>
+
     PERIOD = (By.XPATH, '//div[text()="сутки"]') # Выбираем срок аренды "сутки"  
     COLOR = (By.XPATH, '//label[@for="black"]')  # Выбираем цвет "чёрный жемчуг"
     COMMENT_FIELD = (By.XPATH, '//input[@placeholder="Комментарий для курьера"]')  # Поле для ввода "Комментарий для курьера"
@@ -23,7 +23,5 @@ class OrderPageLocators:
     
     YES_BUTTON = (By.XPATH, "//button[text() ='Да']") # В появившейся форме выбираем кнопку "Да"
     
-    MODAL_SCREEN_SUCCESS = (By.XPATH, '//button[text()="Посмотреть статус"]') # Всплывающее окно "Заказ оформлен"
-    #<button class="Button_Button__ra12g Button_Middle__1CSJM">Посмотреть статус</button>
-#@class="Order_ModalHeader__3FDaJ" and 
-#MODAL_SCREEN_SUCCESS = (By.XPATH, '//div[text()="Заказ оформлен"]') # Всплывающее окно "Заказ оформлен"
+    BUTTON_MODAL_SCREEN_SUCCESS = (By.XPATH, '//button[text()="Посмотреть статус"]') # Всплывающее окно "Заказ оформлен"
+   
